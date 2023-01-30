@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a428b864f8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="header">
+    <div class="container">
+        <img src="image/lamp.png" class="lamp">
+        <!-- <img src="image/dino.png" class="logo"> -->
+        <img src="image/light.png" class="light" id="light">
+        <img src="image/comp.png"  class="comp" id="bright">
+        <img src="image/plant1-removebg-preview.png" id="glow" class="plant">
+        <img src="image/plant3-removebg-preview.png"  id= "glow" class="plant1">
+
+
+       
+
+        <nav>
+            <ul>
+           <li><a href="#header">home</a></li>
+           <li><a href="#about">about</a></li>
+           <!-- <li><a href="#">service</a></li>
+           <li><a href="#">portfolio</a></li> -->
+           <li><a href="#contact">contact</a></li>
+           <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+
+        </ul>
+        </nav>
+        
+    </div>
+    <div class="textcontainer">
+        <h1>Hi,<br> I'm Subhana Chitrakar.</h1>
+        <p>I'm a learner..<br>I like making fun,interactive things with code. I'm really into designing too..</p>
+    </div>
+</div>
+
+<!-- -----about--- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="row-col1">
+                <img src="image/IMG_0131.JPG" class="mypic">
+               
+                <div class="row-col2">
+                    <h1>About Me</h1>
+                    <p>I'm Subhana Chitrakar. I'm 22. I'm currently doing bachelors in Computer Engineering.This is my simple portfolio website made using HTML,CSS & Javascript.I love playing with designs so i'm also learning Figma which i found very engaging. </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick= "opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('personal project')">Personal Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tabs" id="skills">
+                        <ul>
+                            <li><span>Web Development</span> <li>Html</li>  <li>CSS</li>
+                            <li>Javascript</li></li>
+                            <li><span>UI/UX</span><br>Figma</li>
+                </div>
+                <div class="tab-contents" id="personal project">
+                    <ul>
+                        <li><span>major project: 2022-2023</span><br>Automated Face Recognition Based Attendance System 
+                            using MTCNN, FaceNet and SVM</li>
+                        <li><span>minor project: 2021-2022</span><br>Web Based House Rental Service using HTML and CSS</li>
+                   
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                  <li><span> 2018-present</span><br>National college of Engineering (TU) </li>
+                  <li><span> 2016-2018</span><br>Science - GEMS Institute of Higher Education (GIHE)</li>
+                  <li><span> 2016</span><br>School- Shuvatara School
+                  </li>
+                </ul>
+
+        </div>
+                 </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<!-----contact---->
+<div id="contact">
+        <div class="container">
+          
+            <div class="contact-left">
+                    <h1>Contact Me</h1>
+                    <p><a href=""><i class="fa-sharp fa-solid fa-paper-plane"></i></a>subhana.chitrakar@gmail.com</p> 
+                    <p><a href=""><i class="fa-sharp fa-solid fa-phone"></i></a> 9861333301</p>
+                    <div class="icons">
+                           <a href="https://www.facebook.com/subhana.chitrakar.7" target="blank" ><i class="fa-brands fa-square-facebook"></i></a>
+                           <a href="https://www.instagram.com/subhana.chitrakar/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                           <a href="https://github.com/subhana-chitrakar" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                    </div>
+
+                    <button> <a href="image/Subhana Chitrakar CV.pdf" download>Download CV</a></button>
+                   
+                </div>
+               
+                <div class="contact-right">
+                    <form form action="https://formspree.io/f/mgebooay" method="POST">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email Address" required>
+                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+            </div>
+        </div>  
+</div>
+
+
+
+
+
+
+
+ <script>
+    let btn = document.getElementById("btn");
+    let light = document.getElementById("light")
+    let bright =document.getElementById("bright")
+    let glow =document.getElementById("glow")
+
+    // ---aboutme---
+    let  tablinks = document.getElementsByClassName("tab-links");
+    let tabcontents = document.getElementsByClassName("tab-contents");
+
+
+     function toggleBtn(){
+        btn.classList.toggle("active");
+        light.classList.toggle("on");
+        bright.classList.toggle("bright");
+        glow.classList.toggle("glow");
+     }
+
+     function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tabs");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tabs");
+     }
+ 
+
+ </script>
+
+
+
+
+</body>
+</html>
